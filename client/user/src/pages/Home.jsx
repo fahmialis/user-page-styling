@@ -1,4 +1,4 @@
-import React,{ useEffect, userState } from 'react'
+import React,{ useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import '../styles/Home.css'
 import UserCard from '../components/UserCard'
@@ -11,7 +11,6 @@ export default function Home() {
   
   useEffect(() => {
     dispatch(getUsers())
-    console.log(users);
   }, [dispatch])
 
   return (

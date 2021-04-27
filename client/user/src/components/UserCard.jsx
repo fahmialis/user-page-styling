@@ -1,7 +1,12 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
-export default function UserCard({user}) {
-  console.log(user);
+export default function UserCard({user, index}) {
+  const history = useHistory()
+
+  function getDetail(email) {
+    history.push(`/detail/${email}`)
+  }
   return (
     <div className="card b-1 hover-shadow mb-20">
       <div className="media card-body">
@@ -20,6 +25,9 @@ export default function UserCard({user}) {
           <div>
             <strong>Phone : </strong>
             <span>{user.phone}</span>
+          </div>
+          <div>
+            <button type="button" className="btn btn-info" onClick={() => {getDetail(user.email)}}>Detail</button>
           </div>
         </footer>
     </div>
