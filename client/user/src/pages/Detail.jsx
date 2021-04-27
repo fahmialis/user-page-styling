@@ -23,6 +23,7 @@ export default function Detail() {
     const email = value.email
     const userDetail = users.find(user => user.email === email)
     setData(userDetail)
+    console.log(data);
   }
 
   function goHome() {
@@ -61,11 +62,10 @@ export default function Detail() {
             <a>City : {data.location?.city}</a><br/>
             <a>Country : {data.location?.country}</a><br/>
             <a>State : {data.location?.state}</a><br/>
-            {/* <a>Street : {`${data.location.street?.name} ${data.location.street?.number}`}</a><br/> */}
             <a>Postcode : {data.location?.postcode}</a><br/>
           </div>
         </div>
-        <div className="col-md-8">
+        <div className="col-md-8 mt-3">
           <div className="tab-content profile-tab" id="myTabContent">
             <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
               <div className="row">
